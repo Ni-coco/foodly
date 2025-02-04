@@ -1,0 +1,69 @@
+.logo-gif-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.logo-gif-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 25%;
+}
+
+.logo-fleche {
+  animation: diagonalMove 3s infinite;
+}
+
+.logo-sac {
+  animation: squeeze 3s infinite;
+}
+
+@keyframes diagonalMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  /* 25% : arrivé à la position (35px, -35px) */
+  25% {
+    transform: translate(25px, -25px);
+  }
+  /* 30% : on reste toujours à (30px, -30px), scale(1) */
+  30% {
+    transform: translate(30px, -30px) scale(1);
+  }
+  31% {
+    transform: translate(30px, -30px) scale(0.9);
+  }
+  32% {
+    transform: translate(30px, -30px) scale(1);
+  }
+  50% {
+    transform: translate(25px, -25px);
+  }
+  /* 75% : retour en position initiale */
+  75% {
+    transform: translate(0, 0);
+  }
+  /* 100% : on termine à la position de départ */
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes squeeze {
+  0% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: scale(1);
+  }
+  31% {
+    transform: scale(0.95);
+  }
+  32% {
+    transform: scale(1);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
