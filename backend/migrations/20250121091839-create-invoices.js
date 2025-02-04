@@ -23,8 +23,8 @@ module.exports = {
         allowNull: false,
       },
       cp: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
+        type: Sequelize.STRING(50),
+        allowNull: false,
       },
       payment_method: {
         type: Sequelize.STRING(50),
@@ -32,9 +32,11 @@ module.exports = {
       payment_status: {
         type: Sequelize.STRING(50),
       },
-      cp: {
-        type: Sequelize.STRING(50),
-        allowNull: false,
+      purchase_date: {
+        type: Sequelize.DATE(),
+      },
+      total_price: {
+        type: Sequelize.FLOAT(),
       },
     });
   },

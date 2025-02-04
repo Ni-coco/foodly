@@ -77,13 +77,14 @@ const pool = new Pool({
     console.log("Order_items insérés avec succès.");
 
     await pool.query(`
-      INSERT INTO Invoices (order_id, billing_address, payment_method, payment_status, cp)
+      INSERT INTO Invoices (order_id, billing_address, payment_method, payment_status, cp, purchase_date, total_price)
       VALUES
-        (1, '123 Rue Principale', 'credit_card', 'paid', '69000'),
-        (2, '7 Boulevard Example', 'paypal', 'failed', '21000'),
-        (3, '99 Avenue Du Test', 'credit_card', 'paid', '13000')
+        (1, '123 Rue Principale', 'credit_card', 'paid', '69000', '2024-01-15 14:30:00', 150.75),
+        (2, '7 Boulevard Example', 'paypal', 'failed', '21000', '2024-02-03 09:15:00', 200.50),
+        (3, '99 Avenue Du Test', 'credit_card', 'paid', '13000', '2024-01-25 18:45:00', 175.20)
       ON CONFLICT DO NOTHING;
     `);
+    
 
     console.log("Invoices insérés avec succès.");
 

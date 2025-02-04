@@ -30,14 +30,14 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      // purchase_date: {
-      //   type: DataTypes.DATE,
-      //   allowNull: false,
-      // },
-      // total_price: {
-      //   type: DataTypes.FLOAT,
-      //   allowNull: false,
-      // },
+      purchase_date: {
+        type: DataTypes.DATE,
+        allowNull: false,
+      },
+      total_price: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+      },
     },
     {
       tableName: "invoices",
